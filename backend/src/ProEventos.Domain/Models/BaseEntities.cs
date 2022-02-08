@@ -1,7 +1,6 @@
-using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace ProEventos.API.Models
+namespace ProEventos.Domain.Models
 {
     public class BaseEntities
     {

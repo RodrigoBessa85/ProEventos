@@ -1,9 +1,14 @@
 {
     "cSpell.words": [
+        "adicionar",
         "ARCOREALDB",
         "ASPNETCORE",
+        "atualizar",
         "buscar",
+        "Curriculo",
         "datepicker",
+        "deleção",
+        "Deletado",
         "encontrado",
         "Evento",
         "Eventos",
@@ -11,15 +16,25 @@
         "Filtrados",
         "filtrar",
         "filtro",
+        "GERAL",
         "Imagem",
         "Lote",
+        "Lotes",
         "Nenhum",
+        "nvarchar",
         "Ocultar",
         "Opções",
         "Palestrantes",
         "Pessoas",
+        "PROEVENTOS",
+        "Quantidade",
+        "recuperar",
+        "retorno",
         "RODRIGOBESSA",
+        "Sociais",
         "SQLEXPRESS",
-        "Tema"
+        "Telefone",
+        "Tema",
+        "temas"
     ]
 }
