@@ -4,7 +4,10 @@
         "ARCOREALDB",
         "ASPNETCORE",
         "atualizar",
+        "bootswatch",
+        "botao",
         "buscar",
+        "Cabecalho",
         "Carregando",
         "certeza",
         "confirmar",
@@ -14,6 +17,8 @@
         "deleção",
         "Deletado",
         "deletar",
+        "Desde",
+        "detalhe",
         "encontrado",
         "Evento",
         "Eventos",
@@ -23,6 +28,7 @@
         "filtro",
         "GERAL",
         "Imagem",
+        "Listar",
         "Lote",
         "Lotes",
         "Nenhum",
@@ -41,8 +47,10 @@
         "Sair",
         "Sociais",
         "SQLEXPRESS",
+        "subtitulo",
         "Telefone",
         "Tema",
-        "temas"
+        "temas",
+        "titulo"
     ]
 }

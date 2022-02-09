@@ -1,3 +1,4 @@
+import { TituloCabecalhoComponent } from './shared/tituloCabecalho/tituloCabecalho.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -5,11 +6,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EventosComponent } from './eventos/eventos.component';
-import { PalestrantesComponent } from './palestrantes/palestrantes.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavbarComponent } from './templates/navbar/navbar.component';
+import { EventosComponent } from './components/eventos/eventos.component';
+import { PalestrantesComponent } from './components/palestrantes/palestrantes.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { ContatosComponent } from './components/contatos/contatos.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -20,14 +24,22 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { EventoService } from './services/evento.service';
 import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
+import { EventoDetalheComponent } from './components/eventos/evento-detalhe/evento-detalhe.component';
+import { EventoListaComponent } from './components/eventos/evento-lista/evento-lista.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EventosComponent,
     PalestrantesComponent,
+    DashboardComponent,
+    ContatosComponent,
+    PerfilComponent,
     NavbarComponent,
-    DateTimeFormatPipe
+    TituloCabecalhoComponent,
+    DateTimeFormatPipe,
+    EventoDetalheComponent,
+    EventoListaComponent
    ],
   imports: [
     BrowserModule,
