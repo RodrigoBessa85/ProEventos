@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class TituloCabecalhoComponent implements OnInit {
 
-  @Input() tituloCabecalho = "";
+  @Input() tituloCabecalho = '';
   @Input() iconClass = 'fa fa-user';
   @Input() subtitulo = 'Desde 2021';
   @Input() botaoListar = false;

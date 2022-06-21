@@ -4,14 +4,14 @@ import { Observable, ReplaySubject } from 'rxjs';
 import { environment } from '@environments/environment';
 import { User } from '@app/models/identity/User';
 import { map, take } from 'rxjs/operators';
-import { UserUpdate } from '../models/identity/UserUpdate';
+import { UserUpdate } from '@app/models/identity/UserUpdate';
 
 @Injectable()
 export class AccountService {
   private currentUserSource = new ReplaySubject<User>(1);
   public currentUser$ = this.currentUserSource.asObservable();
 
-  baseUrl = environment.apiURL + 'api/account/'
+  baseUrl = environment.baseURL + 'api/account/';
   constructor(private http: HttpClient) { }
 
   public login(model: any): Observable<void> {
@@ -20,7 +20,7 @@ export class AccountService {
       map((response: User) => {
         const user = response;
         if (user) {
-          this.setCurrentUser(user)
+          this.setCurrentUser(user);
         }
       })
     );
@@ -37,7 +37,7 @@ export class AccountService {
           this.setCurrentUser(user);
         }
       )
-    )
+    );
   }
 
   public register(model: any): Observable<void> {
@@ -46,7 +46,7 @@ export class AccountService {
       map((response: User) => {
         const user = response;
         if (user) {
-          this.setCurrentUser(user)
+          this.setCurrentUser(user);
         }
       })
     );
@@ -54,7 +54,7 @@ export class AccountService {
 
   logout(): void {
     localStorage.removeItem('user');
-    this.currentUserSource.next(null);
+    this.currentUserSource.next();
     this.currentUserSource.complete();
   }
 

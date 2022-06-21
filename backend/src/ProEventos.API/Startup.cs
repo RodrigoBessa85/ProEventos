@@ -10,6 +10,7 @@ using ProEventos.Application.Services;
 using ProEventos.Persistence.Data;
 using ProEventos.Persistence.Interfaces;
 using ProEventos.Persistence.Repository;
+using Microsoft.AspNetCore.Authentication.Certificate;
 
 namespace ProEventos.API
 {
@@ -33,7 +34,7 @@ namespace ProEventos.API
                     .AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             services.AddScoped<IEventoService, EventoService>();
-            services.AddScoped<IBaseRepository, BaseRepository>();            
+            services.AddScoped<IBaseRepository, BaseRepository>();
             services.AddScoped<IEventoRepository, EventoRepository>();
 
             services.AddCors();
@@ -42,6 +43,8 @@ namespace ProEventos.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ProEventos.API", Version = "v1" });
             });
+
+            services.AddAuthentication(CertificateAuthenticationDefaults.AuthenticationScheme).AddCertificate();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,6 +72,8 @@ namespace ProEventos.API
             {
                 endpoints.MapControllers();
             });
+
+            app.UseAuthentication();
         }
     }
 }

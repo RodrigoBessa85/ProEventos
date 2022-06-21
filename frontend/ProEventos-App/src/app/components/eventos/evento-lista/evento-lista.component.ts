@@ -1,11 +1,10 @@
-import { Evento } from './../../../model/Evento';
-import { EventoService } from './../../../services/evento.service';
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Evento } from '@app/models/Evento';
+import { EventoService } from '@app/services/evento.service';
+import { Component, ElementRef, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-evento-lista',
@@ -13,6 +12,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./evento-lista.component.scss']
 })
 export class EventoListaComponent implements OnInit {
+
+  @ViewChild('content', {static: false}) el!: ElementRef;
 
   public eventos: Evento[] = [];
   public eventosFiltrados: Evento[] = [];
@@ -38,6 +39,7 @@ export class EventoListaComponent implements OnInit {
 
   public getEventos(): void {
     this.eventoService.getEventos().subscribe(
+      // tslint:disable-next-line: variable-name
       (_eventos: Evento[]) => {
         this.eventos = _eventos,
         this.eventosFiltrados = this.eventos;
@@ -73,7 +75,7 @@ export class EventoListaComponent implements OnInit {
     );
   }
 
-  openModal(template: TemplateRef<any>) {
+  openModal(template: TemplateRef<any>): void {
     this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
   }
 
